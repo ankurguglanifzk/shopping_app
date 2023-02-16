@@ -1,0 +1,22 @@
+<h2>Product Details</h2>
+
+<div *ngIf="product">
+    <h3>{{ product.title }}</h3>
+    <p><strong>id:</strong>{{ product.id}}</p>
+    <p><strong>Style:</strong>{{ product.style}}</p>
+    <p><strong>Description:</strong>{{ product.description }}</p>
+    <p><strong>Available Sizes:</strong>{{product.availableSizes}}</p>
+    <p><strong>Price:</strong>${{product.price}}</p>
+    <p><strong>sku:</strong>{{product.sku}}</p>
+    <p><strong>Free shipping:</strong>{{product.isFreeShipping}}</p>
+</div>
+<button type="button" (click)="addtoCart(product)">
+    Add To Cart
+</button>
+
+<button type="button" (click)="removeFromCart(product)">
+    Remove From Cart
+</button>
+<button type="button" [routerLink]="'/'">
+    Back to List
+</button>

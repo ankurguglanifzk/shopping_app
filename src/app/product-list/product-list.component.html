@@ -1,0 +1,33 @@
+<h2>Products</h2>
+<div class="card-top container-fluid">
+    <div class="container d-flex">
+        <div class="item1 d-flex">
+            <a class="mx-3">
+                <img src="assets/images/black-shirt.jpg" width="50" height="70" alt="">
+                <button (click)="isTShirtClicked = true">T-Shirt</button>
+            </a>
+
+            <a>
+                <img src="assets/images/sweatshirt.jpg" width="50" height="70" alt="">
+                <button (click)="isTShirtClicked = false">Sweatshirt</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div *ngFor="let product of products">
+    <div class="item">
+        <div class="item" *ngIf="isTShirtClicked ? product.category === 'T-Shirt' : product.category === 'Sweatshirt'">
+        </div>
+        <a [title]="product.title + ' details'" [routerLink]="['/products', product.id]">
+            <img src="{{product.image }}"><br>
+            {{ product.title }}
+        </a>
+        <br>
+        <button type="button" (click)="addtoCart(product)">
+            Add To Cart
+        </button>
+
+    </div>
+
+</div>

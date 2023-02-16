@@ -1,0 +1,16 @@
+<div *ngIf="isLoggedIn()">
+  <button (click)="logout()">Logout from Google</button>
+  <app-top-bar></app-top-bar>
+  <router-outlet></router-outlet>
+  <div class="container">
+    <table>
+      <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td>{{product.title}}</td>
+      </tr>
+    </table>
+
+  </div>
+
+
+</div>
